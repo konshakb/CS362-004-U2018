@@ -665,7 +665,7 @@ int adventurerEffect(int currentPlayer, struct gameState* state, int drawntreasu
     return 0;
 }
 
-int council_roomEffect(int currentPlayer, struct gameState* state, int handPos)
+int councilRoomEffect(int currentPlayer, struct gameState* state, int handPos, int i)
 {
     //+4 Cards
     for (i = 0; i < 4; i++) {
@@ -688,7 +688,7 @@ int council_roomEffect(int currentPlayer, struct gameState* state, int handPos)
     return 0;
 }
 
-int feastEffect(int currentPlayer, struct gameState* state, int temphand[], int i, int choice1)
+int feastEffect(int currentPlayer, struct gameState* state, int temphand[], int i, int choice1, int x)
 {
     //gain card with cost up to 5
     //Backup hand
@@ -809,10 +809,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         return adventurerEffect(currentPlayer, state, drawntreasure, cardDrawn, temphand, z);
 
     case council_room:
-        return council_roomEffect(currentPlayer, state, handPos);
+        return councilRoomEffect(currentPlayer, state, handPos, i);
 
     case feast:
-        return feastEffect(currentPlayer, state, temphand, i, choice1);
+        return feastEffect(currentPlayer, state, temphand, i, choice1, x);
 
     case gardens:
         return -1;
