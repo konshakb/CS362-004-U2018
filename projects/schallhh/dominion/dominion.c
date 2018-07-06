@@ -764,7 +764,7 @@ int mineEffect(int currentPlayer, struct gameState* state, int choice1, int choi
     //discard trashed card
     for (i = 0; i < state->handCount[currentPlayer]; i++) {
         if (state->hand[currentPlayer][i] == j) {
-            discardCard(i, currentPlayer, state, 0);
+            //discardCard(i, currentPlayer, state, 0);
             break;
         }
     }
