@@ -1,4 +1,6 @@
 *.o
 *.gcno
+player
+playdom
 *.gcov
 *.gcda
