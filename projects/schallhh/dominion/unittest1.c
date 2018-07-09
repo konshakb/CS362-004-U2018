@@ -15,7 +15,6 @@ int main()
     int numPlayer = 2;
     int p, r, c;
     int k[10] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall };
-    int shortK[9] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron };
     struct gameState G;
     int maxCardNo = 9;
     int prevDeckCount, prevHandCount, prevDiscardCount, prevSupplyCount;
@@ -111,13 +110,13 @@ int main()
         // Card is not in game
 
         memset(&G, 23, sizeof(struct gameState)); // clear the game state
-        r = initializeGame(numPlayer, shortK, seed, &G); // initialize a new game without great hall
+        r = initializeGame(numPlayer, k, seed, &G); // initialize a new game without great hall
 
 #ifdef DEBUG_TESTS
         printf("Adding nonexistant card to discard pile.\n");
 #endif
         prevDiscardCount = G.discardCount[p];
-        r = gainCard(great_hall, &G, 0, p);
+        r = gainCard(sea_hag, &G, 0, p);
 #ifdef DEBUG_TESTS
         printf("TEST: Result = %d, expected = %d\n", r, -1);
 #endif
