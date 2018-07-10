@@ -51,10 +51,10 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c car
 	./unittest2 >> tests.out
 	gcov dominion.c >> tests.out
 
-	# echo "unittest3.c:" >> tests.out
-	# gcc -o unittest3 -g dominion.c rngs.o unittest3.c $(CFLAGS)
-	# ./unittest3 >> tests.out
-	# gcov dominion.c >> tests.out
+	echo "unittest3.c:" >> tests.out
+	gcc -o unittest3 -g dominion.c rngs.o unittest3.c $(CFLAGS)
+	./unittest3 >> tests.out
+	gcov dominion.c >> tests.out
 
 	# echo "unittest4.c:" >> tests.out
 	# gcc -o unittest4 -g dominion.c rngs.o unittest4.c $(CFLAGS)
