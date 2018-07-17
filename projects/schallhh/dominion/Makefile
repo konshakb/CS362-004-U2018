@@ -66,10 +66,10 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c car
 	./cardtest1 >> tests.out
 	gcov dominion.c >> tests.out
 
-	# echo "cardtest2.c:" >> tests.out
-	# gcc -o cardtest2 -g dominion.c rngs.o cardtest2.c $(CFLAGS)
-	# ./cardtest2 >> tests.out
-	# gcov dominion.c >> tests.out
+	echo "cardtest2.c:" >> tests.out
+	gcc -o cardtest2 -g dominion.c rngs.o cardtest2.c $(CFLAGS)
+	./cardtest2 >> tests.out
+	gcov dominion.c >> tests.out
 
 	# echo "cardtest3.c:" >> tests.out
 	# gcc -o cardtest3 -g dominion.c rngs.o cardtest3.c $(CFLAGS)
