@@ -52,11 +52,11 @@ int main()
                     G.supplyCount[feast] = f;
 
                     if (p == 0) {
-                        testAssert(isGameOver(&G) == 1, "Game over when province pile depleated");
+                        testAssert(isGameOver(&G) == 1, "Game over when province pile depleted");
                     } else if (a == 0 && c == 0 && f == 0) {
-                        testAssert(isGameOver(&G) == 1, "Game over when 3 piles depleated");
+                        testAssert(isGameOver(&G) == 1, "Game over when 3 piles depleted");
                     } else {
-                        testAssert(isGameOver(&G) == 0, "Game not over when 2 or fewer piles depleated while province pile has one or more cards");
+                        testAssert(isGameOver(&G) == 0, "Game not over when 2 or fewer piles depleted while province pile has one or more cards");
                     }
                 }
             }
