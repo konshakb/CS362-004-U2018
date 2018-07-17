@@ -68,8 +68,8 @@ void adventureTest(int cardNo, int deckPos)
     testAssert(G.deckCount[p] + G.discardCount[p] == prevG.deckCount[p] + prevG.discardCount[p] - 2, "Deck and discard decresed by 2");
 
     // Test cards in right place
-    testAssert(G.hand[p][G.handCount[p]] == cardNo, "Last card in hand is the drawn treasure card");
-    testAssert(G.hand[p][G.handCount[p] - 1] == cardNo, "Second to last card in hand is the drawn treasure card");
+    testAssert(G.hand[p][G.handCount[p] - 1] == cardNo, "Last card in hand is the drawn treasure card");
+    testAssert(G.hand[p][G.handCount[p] - 2] == cardNo, "Second to last card in hand is the drawn treasure card");
 
     // Test $$ increases
     updateCoins(p, &G, 0);
