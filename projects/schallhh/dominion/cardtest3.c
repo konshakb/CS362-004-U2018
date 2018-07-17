@@ -37,7 +37,7 @@ int main()
     initializeGame(numPlayer, k, seed, &G);
     p = whoseTurn(&G);
 
-    // Place a village in the current player's hand and set the end of the deck to 2, 1, 0
+    // Place a village in the current player's hand
     G.hand[p][0] = village;
 
     memcpy(&prevG, &G, sizeof(struct gameState));
