@@ -55,6 +55,7 @@ void adventureTest(int cardNo, int deckPos)
     // for (i = 0; i < G.discardCount[p]; i++) {
     //     printf("%d ", G.discard[p][i]);
     // }
+    // printf("\n");
 
     memcpy(&prevG, &G, sizeof(struct gameState));
 
@@ -64,12 +65,12 @@ void adventureTest(int cardNo, int deckPos)
     // Test states
     testAssert(coin_bonus == 0, "No bonus gained from play.");
     testAssert(G.numActions == prevG.numActions, "No actions gained from play");
-    testAssert(G.handCount[p] == prevG.handCount[p] + 2, "Hand increased by 2 ");
+    testAssert(G.handCount[p] == prevG.handCount[p] + 1, "Hand increased by 1 (+2 cards drawn -1 adventurer discarded)");
     testAssert(G.deckCount[p] + G.discardCount[p] == prevG.deckCount[p] + prevG.discardCount[p] - 2, "Deck and discard decresed by 2");
 
     // Test cards in right place
     testAssert(G.hand[p][G.handCount[p] - 1] == cardNo, "Last card in hand is the drawn treasure card");
-    testAssert(G.hand[p][G.handCount[p] - 2] == cardNo, "Second to last card in hand is the drawn treasure card");
+    testAssert(G.hand[p][0] == cardNo, "Drawn treasure card replaces adventurer at front of hand");
 
     // Test $$ increases
     updateCoins(p, &G, 0);
@@ -80,7 +81,7 @@ void adventureTest(int cardNo, int deckPos)
 
 int main()
 {
-    printf("Testing: smithyEffect()\n");
+    printf("Testing: adventurerEffect()\n");
 
     int cardNo, deckPos;
 
