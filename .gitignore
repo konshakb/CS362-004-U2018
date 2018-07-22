@@ -1,4 +1,6 @@
+*.dSYM
 *.o
+.DS_Store
 .vscode
 *.gcno
 player
