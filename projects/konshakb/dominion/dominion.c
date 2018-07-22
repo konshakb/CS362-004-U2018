@@ -165,11 +165,11 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 		//initialize hand size to zero
 		state->handCount[i] = 0;
 		state->discardCount[i] = 0;
-		//draw 5 cards
-		// for (j = 0; j < 5; j++)
-		//	{
-		//	  drawCard(i, state);
-		//	}
+//		draw 5 cards
+//		 for (j = 0; j < 5; j++)
+//			{
+//			  drawCard(i, state);
+//			}
 	}
 
 	//set embargo tokens to 0 for all supply piles
@@ -652,10 +652,10 @@ int adventuredraw(int currentPlayer, int drawntreasure, int z, int temphand[], i
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-			drawntreasure++;
+			drawntreasure=drawntreasure+2;
 		else{
 			temphand[z]=cardDrawn;
-		//	state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).BUG COMMENTED OUT removing TOP CARD
+			state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).BUG COMMENTED OUT removing TOP CARD
 			z++;
 		}
 	}
@@ -669,12 +669,12 @@ int smithydraw(int currentPlayer, int handPos, struct gameState *state)
 {
 	int i;
 			//+3 Cards
-			for (i = 0; i <= 3; i++)//bug inserted i < 3 switched to i <=3
+			for (i = 0; i < 3; i++)
 			{
 				drawCard(currentPlayer, state);
 			}
 			//discard card from hand
-			discardCard(handPos, currentPlayer, state, 0);
+		//	discardCard(handPos, currentPlayer, state, 0);
 			return 0;
 }
 
@@ -728,7 +728,7 @@ int councildraw(int currentPlayer, int handPos, struct gameState *state)
 			state->numBuys++;
 
 			//Each other player draws a card
-			for (i = 0; i <= state->numPlayers; i++)//BUG  less than or equal added
+			for (i = 0; i < state->numPlayers; i++)//BUG  less than or equal added
 			{
 				if ( i != currentPlayer )
 				{

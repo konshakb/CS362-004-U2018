@@ -1,0 +1,145 @@
+Result for running tests:
+unittest1.c:
+Testing curse
+Passed: curse cost 0
+Testing estate
+Passed: estate cost 2
+Passed: duchy cost 5
+Passed: province cost 8
+Passed: copper cost 0
+Passed: silver cost 3
+Passed: gold cost 6
+Passed: adventurer cost 6
+Passed: coucil room cost 5
+Passed: feast cost 4
+Passed: gardens cost 4
+Passed: mine cost 5
+Passed: remodel cost 4
+Passed: smithy cost 4
+Passed: village cost 3
+Passed: baron cost 4
+Passed: great_hall cost 3
+Passed: minion cost 5
+Passed: steward cost 3
+Passed: tribute cost 5
+Passed: ambassador cost 3
+Passed: cutpurse cost 4
+Passed: embargo cost 2
+Passed: outpost cost 5
+Passed: salvager cost 4
+Passed: seahag cost 4
+Passed: treasure map cost 4
+All tests passed
+File 'dominion.c'
+Lines executed:5.14% of 564
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+Supply cards:
+supply card total: 10
+supply card total: 8
+supply card total: 8
+supply card total: 8
+supply card total: 46
+supply card total: 40
+supply card total: 30
+supply card total: 10
+supply card total: 10
+supply card total: 10
+supply card total: 8
+supply card total: 10
+supply card total: 10
+supply card total: 10
+supply card total: 10
+supply card total: 10
+supply card total: 8
+supply card total: -1
+supply card total: -1
+supply card total: -1
+supply card total: -1
+supply card total: -1
+supply card total: -1
+supply card total: -1
+supply card total: -1
+3 province
+Test passed.  r = 1 because there are three empty supply piles
+result 0
+Test passed.  r = 1 because there are no province cards left
+Test passed.  Cards not province did not cause game to end
+All tests passed!
+File 'dominion.c'
+Lines executed:22.70% of 564
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+All tests passed
+File 'dominion.c'
+Lines executed:22.87% of 564
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+TESTING gaincard():
+Adventurer totals 10
+Passed: sea hag not found
+Player 1 deck count = 10
+Player 1 hand count = 0
+Player 1 discard count = 0
+Adventurer totals 9
+Player 1 deck count = 11
+Player 1 hand count = 0
+Player 1 discard count = 0
+Adventurer found 0 9 
+Adventurer totals 8
+Player 1 deck count = 11
+Player 1 hand count = 1
+Player 1 discard count = 0
+Adventurer totals 7
+Player 1 deck count = 11
+Player 1 hand count = 1
+Player 1 discard count = 1
+No more adventure should be -1 -1
+All tests passed
+File 'dominion.c'
+Lines executed:25.53% of 564
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+TESTING adventure card:
+current player hand total:  5
+Test failed. Hand count = 6. Should = 7
+Test failed. Coins should = 6.  Coins = 5
+All tests did not pass.
+File 'dominion.c'
+Lines executed:29.43% of 564
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+TESTING council card:
+Adventurer: 7
+current player hand total:  5
+Test passed.  Hand Count = 8
+Test passed.  Discard = 1
+All tests passed!
+File 'dominion.c'
+Lines executed:33.51% of 564
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+TESTING smithy card:
+Test failed. Hand count = 8. Should = 7
+Passed game state
+All tests did not pass.
+File 'dominion.c'
+Lines executed:34.57% of 564
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+TESTING village card:
+Test passed.  handCount = 5
+Test failed. Actions = 4. Should = 3
+Passed game state
+All tests did not pass.
+File 'dominion.c'
+Lines executed:35.82% of 564
+Creating 'dominion.c.gcov'
+
