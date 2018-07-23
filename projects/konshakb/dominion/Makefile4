@@ -36,48 +36,28 @@ testUpdateCoins: testUpdateCoins.c dominion.o rngs.o
 
 default: tests.out
 
-tests.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
-	echo "REsult for running tests:" > tests.out
+tests.out: dominion.o rngs.o
+	echo "Result for running tests:" > tests.out
 	
-	echo "unittest1.c:" >> tests.out
 	gcc -o unittest1 unittest1.c -g   dominion.o rngs.o $(CFLAGS)
-	unittest1 >> tests.out
-	gcov dominion.c -b >> tests.out
-	
-	echo "unittest2.c:" >> tests.out
 	gcc -o unittest2 unittest2.c -g   dominion.o rngs.o $(CFLAGS)
-	unittest2 >> tests.out
-	gcov dominion.c -b >> tests.out
-	
-	echo "unittest3.c:" >> tests.out
 	gcc -o unittest3 unittest3.c -g   dominion.o rngs.o $(CFLAGS)
-	unittest3 >> tests.out
-	gcov dominion.c -b >> tests.out
-	
-	echo "unittest4.c:" >> tests.out
 	gcc -o unittest4 unittest4.c -g   dominion.o rngs.o $(CFLAGS)
-	unittest4 >> tests.out
-	gcov dominion.c -b >> tests.out
-	
-	echo "cardtest1.c:" >> tests.out
 	gcc -o cardtest1 cardtest1.c -g   dominion.o rngs.o $(CFLAGS)
-	cardtest1 >> tests.out
-	gcov dominion.c -b >> tests.out
-	
-	echo "cardtest2.c:" >> tests.out
 	gcc -o cardtest2 cardtest2.c -g   dominion.o rngs.o $(CFLAGS)
-	cardtest2 >> tests.out
-	gcov dominion.c -b >> tests.out
-	
-	echo "cardtest3.c:" >> tests.out
 	gcc -o cardtest3 cardtest3.c -g   dominion.o rngs.o $(CFLAGS)
-	cardtest3 >> tests.out
-	gcov dominion.c -b >> tests.out
-	
-	echo "cardtest4.c:" >> tests.out
 	gcc -o cardtest4 cardtest4.c -g   dominion.o rngs.o $(CFLAGS)
+	
+	unittest1 >> tests.out
+	unittest2 >> tests.out
+	unittest3 >> tests.out
+	unittest4 >> tests.out
+	cardtest1 >> tests.out
+	cardtest2 >> tests.out
+	cardtest3 >> tests.out
 	cardtest4 >> tests.out
-	gcov dominion.c -b >> tests.out
+	gcov dominion.c -f -b >> tests.out
+	cat dominion.c.gcov
 
 
 

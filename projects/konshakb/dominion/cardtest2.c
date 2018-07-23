@@ -33,7 +33,6 @@ int main() {
                 memset(&G, 23, sizeof(struct gameState));   // clear the game state
                 r = initializeGame(2, k, seed, &G); // initialize a new game
 
-                printf("Adventurer: %d\n", adventurer);
                 printf("current player hand total:  %d\n", G.handCount[0]);
                 handCount=G.handCount[0];
                 discard=G.playedCardCount;

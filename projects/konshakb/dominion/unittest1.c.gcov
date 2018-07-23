@@ -1,0 +1,520 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:
+        -:    2:/*tration of how to write unit tests for dominion-base
+        -:    3: * Include the following lines in your makefile:
+        -:    4: *  *
+        -:    5: *   * testUpdateCoins: testUpdateCoins.c dominion.o rngs.o
+        -:    6: *    *      gcc -o testUpdateCoins -g  testUpdateCoins.c dominion.o rngs.o $(CFLAGS)
+        -:    7: *     * -----------------------------------------------------------------------
+        -:    8: *      */
+        -:    9:
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include <string.h>
+        -:   13:#include <stdio.h>
+        -:   14:#include <assert.h>
+        -:   15:#include "rngs.h"
+        -:   16:/*
+        -:   17:   int getCost(int cardNumber)
+        -:   18:   {
+        -:   19:   switch( cardNumber ) 
+        -:   20:   {
+        -:   21:   case estate:////
+        -:   22:   return 2;
+        -:   23:   case duchy:
+        -:   24:   return 5;
+        -:   25:   case province:
+        -:   26:   return 8;
+        -:   27:   case copper:
+        -:   28:   return 0;
+        -:   29:   case silver:
+        -:   30:   return 3;
+        -:   31:   case gold:
+        -:   32:   return 6;
+        -:   33:   case adventurer:
+        -:   34:   return 6;
+        -:   35:   case council_room:
+        -:   36:   return 5;
+        -:   37:   case feast:
+        -:   38:   return 4;
+        -:   39:   case gardens:
+        -:   40:   return 4;
+        -:   41:   case mine:
+        -:   42:   return 5;
+        -:   43:   case remodel:
+        -:   44:   return 4;
+        -:   45:   case smithy:
+        -:   46:   return 4;
+        -:   47:   case village:
+        -:   48:   return 3;
+        -:   49:   case baron:
+        -:   50:   return 4;
+        -:   51:   case great_hall:
+        -:   52:   return 3;
+        -:   53:   case minion:
+        -:   54:   return 5;
+        -:   55:   case steward:
+        -:   56:   return 3;
+        -:   57:   case tribute:
+        -:   58:   return 5;
+        -:   59:   case ambassador:
+        -:   60:   return 3;
+        -:   61:   case cutpurse:
+        -:   62:   return 4;
+        -:   63:   case embargo: 
+        -:   64:   return 2;
+        -:   65:   case outpost:
+        -:   66:   return 5;
+        -:   67:   case salvager:
+        -:   68:   return 4;
+        -:   69:   case sea_hag:
+        -:   70:   return 4;
+        -:   71:   case treasure_map:
+        -:   72:   return 4;
+        -:   73:   }
+        -:   74:
+        -:   75:   return -1;
+        -:   76:   }
+        -:   77:   */
+        -:   78:// set NOISY_TEST to 0 to remove printfs from output
+        -:   79:#define NOISY_TEST 1
+        -:   80:
+function main called 1 returned 100% blocks executed 61%
+        1:   81:int main() {
+        1:   82:    int cost=0;
+        1:   83:    int bug=0;
+        1:   84:    printf("Testing curse\n");
+call    0 returned 100%
+        1:   85:    cost=getCost(0);//curse3
+call    0 returned 100%
+        1:   86:    if(cost==0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   87:        printf("Passed: Curse cost %d\n", cost);
+call    0 returned 100%
+        -:   88:    else
+        -:   89:    {
+    #####:   90:        printf("Test failed\n");
+call    0 never executed
+    #####:   91:        bug=1;
+        -:   92:    }
+        -:   93:
+        1:   94:    printf("Testing estate\n");
+call    0 returned 100%
+        1:   95:    cost=getCost(1);//estate
+call    0 returned 100%
+        1:   96:    if(cost==2)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   97:        printf("Passed: estate cost %d\n", cost);
+call    0 returned 100%
+        -:   98:    else
+        -:   99:    {
+    #####:  100:        printf("Test failed\n");
+call    0 never executed
+    #####:  101:        bug=1;
+        -:  102:    }
+        1:  103:    cost=getCost(2);//duchy
+call    0 returned 100%
+        1:  104:    if(cost==5)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  105:        printf("Passed: duchy cost %d\n", cost);
+call    0 returned 100%
+        -:  106:    else
+        -:  107:    {
+    #####:  108:        printf("Test failed\n");
+call    0 never executed
+    #####:  109:        bug=1;
+        -:  110:    }
+        1:  111:    cost=getCost(3);//province
+call    0 returned 100%
+        1:  112:    if(cost==8)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  113:        printf("Passed: province cost %d\n", cost);
+call    0 returned 100%
+        -:  114:    else
+        -:  115:    {
+    #####:  116:        printf("Test failed\n");
+call    0 never executed
+    #####:  117:        bug=1;
+        -:  118:    }
+        1:  119:    cost=getCost(4);//copper
+call    0 returned 100%
+        1:  120:    if(cost==0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  121:        printf("Passed: copper cost %d\n", cost);
+call    0 returned 100%
+        -:  122:    else
+        -:  123:    {
+    #####:  124:        printf("Test failed\n");
+call    0 never executed
+    #####:  125:        bug=1;
+        -:  126:    }
+        1:  127:    cost=getCost(5);//silver
+call    0 returned 100%
+        1:  128:    if(cost==3)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  129:        printf("Passed: silver cost %d\n", cost);
+call    0 returned 100%
+        -:  130:    else
+        -:  131:    {
+    #####:  132:        printf("Test failed\n");
+call    0 never executed
+    #####:  133:        bug=1;
+        -:  134:    }
+        1:  135:cost=getCost(6);//gold
+call    0 returned 100%
+        1:  136:    if(cost==6)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  137:        printf("Passed: gold cost %d\n", cost);
+call    0 returned 100%
+        -:  138:    else
+        -:  139:    {
+    #####:  140:        printf("Test failed\n");
+call    0 never executed
+    #####:  141:        bug=1;
+        -:  142:    }
+        1:  143:    cost=getCost(7);//adv
+call    0 returned 100%
+        1:  144:    if(cost==6)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  145:        printf("Passed: adventurer cost %d\n", cost);
+call    0 returned 100%
+        -:  146:    else
+        -:  147:    {
+    #####:  148:        printf("Test failed\n");
+call    0 never executed
+    #####:  149:        bug=1;
+        -:  150:    }
+        1:  151:    cost=getCost(8);//councilroom
+call    0 returned 100%
+        1:  152:    if(cost==5)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  153:        printf("Passed: coucil room cost %d\n", cost);
+call    0 returned 100%
+        -:  154:    else
+        -:  155:    {
+    #####:  156:        printf("Test failed\n");
+call    0 never executed
+    #####:  157:        bug=1;
+        -:  158:    }
+        1:  159:    cost=getCost(9);//feast
+call    0 returned 100%
+        1:  160:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  161:        printf("Passed: feast cost %d\n", cost);
+call    0 returned 100%
+        -:  162:    else
+        -:  163:    {
+    #####:  164:        printf("Test failed\n");
+call    0 never executed
+    #####:  165:        bug=1;
+        -:  166:    }
+        1:  167:    cost=getCost(10);//gardens
+call    0 returned 100%
+        1:  168:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  169:        printf("Passed: gardens cost %d\n", cost);
+call    0 returned 100%
+        -:  170:    else
+        -:  171:    {
+    #####:  172:        printf("Test failed\n");
+call    0 never executed
+    #####:  173:        bug=1;
+        -:  174:    }
+        1:  175:    cost=getCost(11);//mine
+call    0 returned 100%
+        1:  176:    if(cost==5)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  177:        printf("Passed: mine cost %d\n", cost);
+call    0 returned 100%
+        -:  178:    else
+        -:  179:    {
+    #####:  180:        printf("Test failed\n");
+call    0 never executed
+    #####:  181:        bug=1;
+        -:  182:    }
+        1:  183:    cost=getCost(12);//remodel
+call    0 returned 100%
+        1:  184:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  185:        printf("Passed: remodel cost %d\n", cost);
+call    0 returned 100%
+        -:  186:    else
+        -:  187:    {
+    #####:  188:        printf("Test failed\n");
+call    0 never executed
+    #####:  189:        bug=1;
+        -:  190:    }
+        1:  191:    cost=getCost(13);//smithy
+call    0 returned 100%
+        1:  192:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  193:        printf("Passed: smithy cost %d\n", cost);
+call    0 returned 100%
+        -:  194:    else
+        -:  195:    {
+    #####:  196:        printf("Test failed\n");
+call    0 never executed
+    #####:  197:        bug=1;
+        -:  198:    }
+        1:  199:    cost=getCost(14);//village
+call    0 returned 100%
+        1:  200:    if(cost==3)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  201:        printf("Passed: village cost %d\n", cost);
+call    0 returned 100%
+        -:  202:    else
+        -:  203:    {
+    #####:  204:        printf("Test failed\n");
+call    0 never executed
+    #####:  205:        bug=1;
+        -:  206:    }
+        1:  207:    cost=getCost(15);//baron
+call    0 returned 100%
+        1:  208:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  209:        printf("Passed: baron cost %d\n", cost);
+call    0 returned 100%
+        -:  210:    else
+        -:  211:    {
+    #####:  212:        printf("Test failed\n");
+call    0 never executed
+    #####:  213:        bug=1;
+        -:  214:    }
+        1:  215:    cost=getCost(16);//ghall
+call    0 returned 100%
+        1:  216:    if(cost==3)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  217:        printf("Passed: great_hall cost %d\n", cost);
+call    0 returned 100%
+        -:  218:    else
+        -:  219:    {
+    #####:  220:        printf("Test failed\n");
+call    0 never executed
+    #####:  221:        bug=1;
+        -:  222:    }
+        1:  223:    cost=getCost(17);//minion
+call    0 returned 100%
+        1:  224:    if(cost==5)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  225:        printf("Passed: minion cost %d\n", cost);
+call    0 returned 100%
+        -:  226:    else
+        -:  227:    {
+    #####:  228:        printf("Test failed\n");
+call    0 never executed
+    #####:  229:        bug=1;
+        -:  230:    }
+        1:  231:    cost=getCost(18);//steward
+call    0 returned 100%
+        1:  232:    if(cost==3)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  233:        printf("Passed: steward cost %d\n", cost);
+call    0 returned 100%
+        -:  234:    else
+        -:  235:    {
+    #####:  236:        printf("Test failed\n");
+call    0 never executed
+    #####:  237:        bug=1;
+        -:  238:    }
+        1:  239:    cost=getCost(19);//tribute
+call    0 returned 100%
+        1:  240:    if(cost==5)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  241:        printf("Passed: tribute cost %d\n", cost);
+call    0 returned 100%
+        -:  242:    else
+        -:  243:    {
+    #####:  244:        printf("Test failed\n");
+call    0 never executed
+    #####:  245:        bug=1;
+        -:  246:    }
+        1:  247:    cost=getCost(20);//ambassador
+call    0 returned 100%
+        1:  248:    if(cost==3)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  249:        printf("Passed: ambassador cost %d\n", cost);
+call    0 returned 100%
+        -:  250:    else
+        -:  251:    {
+    #####:  252:        printf("Test failed\n");
+call    0 never executed
+    #####:  253:        bug=1;
+        -:  254:    }
+        1:  255:    cost=getCost(21);//cutpurse
+call    0 returned 100%
+        1:  256:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  257:        printf("Passed: cutpurse cost %d\n", cost);
+call    0 returned 100%
+        -:  258:    else
+        -:  259:    {
+    #####:  260:        printf("Test failed\n");
+call    0 never executed
+    #####:  261:        bug=1;
+        -:  262:    }
+        1:  263:    cost=getCost(22);//embargo
+call    0 returned 100%
+        1:  264:    if(cost==2)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  265:        printf("Passed: embargo cost %d\n", cost);
+call    0 returned 100%
+        -:  266:    else
+        -:  267:    {
+    #####:  268:        printf("Test failed\n");
+call    0 never executed
+    #####:  269:        bug=1;
+        -:  270:    }
+        1:  271:    cost=getCost(23);//outpost
+call    0 returned 100%
+        1:  272:    if(cost==5)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  273:        printf("Passed: outpost cost %d\n", cost);
+call    0 returned 100%
+        -:  274:    else
+        -:  275:    {
+    #####:  276:        printf("Test failed\n");
+call    0 never executed
+    #####:  277:        bug=1;
+        -:  278:    }
+        1:  279:    cost=getCost(24);//salvager
+call    0 returned 100%
+        1:  280:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  281:        printf("Passed: salvager cost %d\n", cost);
+call    0 returned 100%
+        -:  282:    else
+        -:  283:    {
+    #####:  284:        printf("Test failed\n");
+call    0 never executed
+    #####:  285:        bug=1;
+        -:  286:    }
+        1:  287:    cost=getCost(25);//seahag
+call    0 returned 100%
+        1:  288:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  289:        printf("Passed: seahag cost %d\n", cost);
+call    0 returned 100%
+        -:  290:    else
+        -:  291:    {
+    #####:  292:        printf("Test failed\n");
+call    0 never executed
+    #####:  293:        bug=1;
+        -:  294:    }
+        1:  295:    cost=getCost(26);//map
+call    0 returned 100%
+        1:  296:    if(cost==4)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  297:        printf("Passed: treasure map cost %d\n", cost);
+call    0 returned 100%
+        -:  298:    else
+        -:  299:    {
+    #####:  300:        printf("Test failed\n");
+call    0 never executed
+    #####:  301:        bug=1;
+        -:  302:    }
+        1:  303:    if(bug==0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  304:    {
+        1:  305:        printf("All tests passed\n");
+call    0 returned 100%
+        -:  306:    }
+        -:  307:    else
+        -:  308:    {
+    #####:  309:        printf("All tests did not pass\n");
+call    0 never executed
+        -:  310:    }
+        -:  311:    /*
+        -:  312:    int i;
+        -:  313:    int seed = 1000;
+        -:  314:    int numPlayer = 2;
+        -:  315:    int maxBonus = 10;
+        -:  316:    int p, r, handCount;
+        -:  317:    int bonus;
+        -:  318:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:  319:        , remodel, smithy, village, baron, great_hall};
+        -:  320:    struct gameState G;
+        -:  321:    int maxHandCount = 5;
+        -:  322:    // arrays of all coppers, silvers, and golds
+        -:  323:    int coppers[MAX_HAND];//maxhand = 500
+        -:  324:    int silvers[MAX_HAND];
+        -:  325:    int golds[MAX_HAND];
+        -:  326:    for (i = 0; i < MAX_HAND; i++)
+        -:  327:    {
+        -:  328:        coppers[i] = copper;
+        -:  329:        silvers[i] = silver;
+        -:  330:        golds[i] = gold;
+        -:  331:    }
+        -:  332:
+        -:  333:    printf ("TESTING updateCoins():\n");
+        -:  334:    for (p = 0; p < numPlayer; p++)
+        -:  335:    {
+        -:  336:        for (handCount = 1; handCount <= maxHandCount; handCount++)
+        -:  337:        {
+        -:  338:            for (bonus = 0; bonus <= maxBonus; bonus++)
+        -:  339:            {
+        -:  340:#if (NOISY_TEST == 1)
+        -:  341:                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
+        -:  342:#endif
+        -:  343:                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+        -:  344:                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+        -:  345:                G.handCount[p] = handCount;                 // set the number of cards on hand
+        -:  346:                memcpy(G.hand[p], coppers, sizeof(int) * handCount); // set all the cards to copper
+        -:  347:                updateCoins(p, &G, bonus);
+        -:  348:#if (NOISY_TEST == 1)
+        -:  349:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 1 + bonus);
+        -:  350:#endif
+        -:  351:                assert(G.coins == handCount * 1 + bonus); // check if the number of coins is correct
+        -:  352:
+        -:  353:                memcpy(G.hand[p], silvers, sizeof(int) * handCount); // set all the cards to silver
+        -:  354:                updateCoins(p, &G, bonus);
+        -:  355:#if (NOISY_TEST == 1)
+        -:  356:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
+        -:  357:#endif
+        -:  358:                assert(G.coins == handCount * 2 + bonus); // check if the number of coins is correct
+        -:  359:
+        -:  360:                memcpy(G.hand[p], golds, sizeof(int) * handCount); // set all the cards to gold
+        -:  361:                updateCoins(p, &G, bonus);
+        -:  362:#if (NOISY_TEST == 1)
+        -:  363:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
+        -:  364:#endif
+        -:  365:                assert(G.coins == handCount * 3 + bonus); // check if the number of coins is correct
+        -:  366:            }
+        -:  367:        }
+        -:  368:    }
+        -:  369:
+        -:  370:    printf("All tests passed!\n");
+        -:  371:*/
+        1:  372:    return 0;
+        -:  373:}

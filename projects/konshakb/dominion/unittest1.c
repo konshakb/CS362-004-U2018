@@ -18,7 +18,7 @@
    {
    switch( cardNumber ) 
    {
-   case estate:
+   case estate:////
    return 2;
    case duchy:
    return 5;
@@ -84,7 +84,7 @@ int main() {
     printf("Testing curse\n");
     cost=getCost(0);//curse3
     if(cost==0)
-        printf("Passed: curse cost %d\n", cost);
+        printf("Passed: Curse cost %d\n", cost);
     else
     {
         printf("Test failed\n");

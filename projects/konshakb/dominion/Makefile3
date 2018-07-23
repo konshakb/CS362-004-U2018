@@ -37,7 +37,7 @@ testUpdateCoins: testUpdateCoins.c dominion.o rngs.o
 default: tests.out
 
 tests.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
-	echo "REsult for running tests:" > tests.out
+	echo "Result for running tests:" > tests.out
 	
 	echo "unittest1.c:" >> tests.out
 	gcc -o unittest1 unittest1.c -g   dominion.o rngs.o $(CFLAGS)

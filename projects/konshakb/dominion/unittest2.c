@@ -32,7 +32,7 @@ int main() {
     memset(&G, 23, sizeof(struct gameState));   // clear the game state
     r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 
-    printf("Supply cards:\n");
+    printf("Is game over test:\n");
     for(i=0; i < 25; i++)
     {
         printf("supply card total: %d\n", G.supplyCount[i]);
