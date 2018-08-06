@@ -64,7 +64,7 @@ int checkAdventure(int p, struct gameState *post)
     int r;
     int bonus = 0;
     struct gameState pre;
-//    int player=0;
+    //    int player=0;
     int prehand=0;
     int bug=0;
 
@@ -72,12 +72,12 @@ int checkAdventure(int p, struct gameState *post)
 
 
     memcpy (&pre, post, sizeof(struct gameState));
-//    p= pre.whoseTurn;
-   //     printf("current player hand total: %d\n", pre.handCount[p]);//before and after card count
+    //    p= pre.whoseTurn;
+    //     printf("current player hand total: %d\n", pre.handCount[p]);//before and after card count
     prehand=pre.handCount[p];
 
     updateCoins(p, &pre, 0);
-      //  printf("current player hand total: %d\n", pre.handCount[p]);
+    //  printf("current player hand total: %d\n", pre.handCount[p]);
     r = cardEffect(adventurer, 0, 0, 0, &pre, 0, &bonus);
     if(pre.handCount[p]!=prehand+2)
     {
@@ -136,9 +136,10 @@ int checkDrawCard(int p, struct gameState *post)
     assert(memcmp(&pre, post, sizeof(struct gameState))==0);
     return 0;
 }
-int main() {
+int main() 
+{
     int i, n, p, numTreasures;
- //   int k[10] = {adventurer, council_room, feast, gardens, mine
+    //   int k[10] = {adventurer, council_room, feast, gardens, mine
     //    , remodel, smithy, village, baron, great_hall};
     struct gameState G;
 
@@ -147,8 +148,10 @@ int main() {
     SelectStream(2);
     PutSeed(3);
     int min = 3;
-    for (n = 0; n < 2000; n++) {
-        for (i = 0; i < sizeof(struct gameState); i++) {//initialize random tests
+    for (n = 0; n < 2000; n++) 
+    {
+        for (i = 0; i < sizeof(struct gameState); i++) 
+        {//initialize random tests
             ((char*)&G)[i] = floor(Random() * 256);
         }
         p = floor(Random() * MAX_PLAYERS);
@@ -156,7 +159,8 @@ int main() {
         if(G.deckCount[p]<3)
             G.deckCount[p]=3;
         numTreasures = floor(Random() * ((G.deckCount[p] - min) + 1) + min);
-        for (i = 0; i < numTreasures; i++) {
+        for (i = 0; i < numTreasures; i++) 
+        {
             G.deck[p][i] = copper;//fill numtreasures with copper
         }
         G.discardCount[p] = 0;//0 discard amount
