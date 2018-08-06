@@ -1,0 +1,14 @@
+Result for running tests:
+randomtestcard1.c:
+TESTING SmithyCard. 
+RANDOM TESTS. 
+Tests ran  2000 times
+Tests failed 0 times
+Tests passed 2000 times
+File 'dominion.c'
+Lines executed:9.04% of 564
+Branches executed:11.27% of 417
+Taken at least once:5.28% of 417
+Calls executed:5.32% of 94
+Creating 'dominion.c.gcov'
+

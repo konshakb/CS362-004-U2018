@@ -1,0 +1,12 @@
+Result for running tests:
+randomtestadventurer.c:
+TESTING AdventureCard. 
+RANDOM TESTS. 
+Test failed 2000 times
+File 'dominion.c'
+Lines executed:7.98% of 564
+Branches executed:10.79% of 417
+Taken at least once:4.56% of 417
+Calls executed:3.19% of 94
+Creating 'dominion.c.gcov'
+

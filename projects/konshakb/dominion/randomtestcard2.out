@@ -1,0 +1,15 @@
+Result for running tests:
+randomtestcard2.c:
+TESTING Council Card. 
+RANDOM TESTS. 
+All Tests OK
+Tests ran  2000 times
+Tests failed 0 times
+Tests passed 2000 times
+File 'dominion.c'
+Lines executed:19.15% of 564
+Branches executed:17.99% of 417
+Taken at least once:11.27% of 417
+Calls executed:12.77% of 94
+Creating 'dominion.c.gcov'
+
