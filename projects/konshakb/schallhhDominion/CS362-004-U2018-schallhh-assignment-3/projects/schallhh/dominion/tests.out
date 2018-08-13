@@ -1,0 +1,53 @@
+REsult for running tests:
+cardtest1.c:
+TESTING adventure card:
+current player hand total:  5
+HI
+Test failed. Hand count = 6. Should = 7
+Test failed. Coins should = 6.  Coins = 5
+All tests did not pass.
+File 'dominion.c'
+Lines executed:22.53% of 586
+Branches executed:24.82% of 415
+Taken at least once:16.63% of 415
+Calls executed:13.68% of 95
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+TESTING council card:
+current player hand total:  5
+Test passed.  Hand Count = 8
+Test passed.  Discard = 1
+All tests passed!
+File 'dominion.c'
+Lines executed:26.11% of 586
+Branches executed:27.71% of 415
+Taken at least once:19.04% of 415
+Calls executed:17.89% of 95
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+TESTING smithy card:
+Test failed. Hand count = 8. Should = 7
+Passed game state
+All tests did not pass.
+File 'dominion.c'
+Lines executed:27.13% of 586
+Branches executed:28.19% of 415
+Taken at least once:19.76% of 415
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+TESTING village card:
+Test passed.  handCount = 5
+Test passed.  Actions = 3
+Passed game state
+All tests passed!
+File 'dominion.c'
+Lines executed:27.82% of 586
+Branches executed:28.19% of 415
+Taken at least once:20.00% of 415
+Calls executed:23.16% of 95
+Creating 'dominion.c.gcov'
+
