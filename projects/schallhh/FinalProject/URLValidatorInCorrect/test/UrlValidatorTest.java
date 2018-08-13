@@ -42,9 +42,9 @@ public void testIsValid()
 {
 	String[] goodSchemes = {
 			"http://",
-			//"https://",
-			//"ftp://",
-			//"file://"
+			"https://",
+			"ftp://",
+			"file://"
 	};
 	
 	String[] badSchemes = {
@@ -114,11 +114,11 @@ public void testIsValid()
 			"/test",
 			"/test.html",
 			"/test/",
-			"/test/?test=test",
-			"/test/?test=test&test2=2",
-			"/test/?test=test&test",
-			"/test/#",
-			"/test/#test"
+			"/test?test=test",
+			"/test?test=test&test2=2",
+			"/test?test=test&test",
+			"/test#",
+			"/test#test"
 	};
 	
 	String[] badPaths = {
